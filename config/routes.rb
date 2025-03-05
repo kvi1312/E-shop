@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    resources :products
-    resources :categories
-  end
   devise_for :admins
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -18,16 +14,4 @@ Rails.application.routes.draw do
    # root "posts#index"
 
    root to: "home#index"
-
-   authenticated :admin do
-      root to: "admin#index", as: :admin_root
-      end
-
-   #  unauthenticated do
-   #   as :user do
-   #           root to: "devise/registrations#new"
-   #         end
-   #  end
-
-   get "admin" => "admin#index" # config route with <controller>#page
 end
