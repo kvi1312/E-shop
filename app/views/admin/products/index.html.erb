@@ -1,0 +1,64 @@
+<% content_for :title, "Products" %>
+
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Products</h1>
+    <%= link_to "New product", new_admin_product_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+  </div>
+
+  </div>
+
+    <div class="flex flex-col w-full">
+    <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+      <div class="py-2 inline-block min-w-full">
+        <div class="overflow-x-auto">
+          <table class="min-w-full overflow-x-scroll border border-gray-300">
+            <thead class="bg-white border-b border-gray-300">
+              <tr>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Image
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Name
+                </th>
+                 <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Description
+                </th>
+                 <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Price
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @admin_products.each do |item| %>
+                <tr class="bg-gray-50 border-b border-gray-300">
+                   <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-900 font-medium">
+                    <%= item.images.any? ? image_tag(item.images.first.variant(:thumb)) : image_tag("https://placehold.co/50x50") %>          
+                  </td>
+
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-900 font-medium">
+                    <%=link_to item.name, edit_admin_product_path(item) %>          
+                  </td>
+
+                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                      <%= item.description%>
+                  </td>
+
+                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                      $<%= (item.price/100.0).to_s%>
+                  </td>
+                </tr>
+              <% end %>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

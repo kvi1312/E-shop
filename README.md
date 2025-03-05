@@ -23,4 +23,4 @@ Things you may want to cover:
 
 - ...
 
-admin account : lenguyenkhai2611@gmail.com - a2601197
+admin account : lenguyenkhai2611@gmail.com - 123456
