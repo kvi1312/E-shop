@@ -1,0 +1,20 @@
+<div id="<%= dom_id stock %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Size:</strong>
+    <%= stock.size %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Amount:</strong>
+    <%= stock.amount %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Product:</strong>
+    <%= stock.product_id %>
+  </div>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this stock", admin_product_stock_path(stock.product, stock), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this stock", edit_admin_product_stock_path(stock.product, stock), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

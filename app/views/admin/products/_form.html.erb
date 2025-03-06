@@ -38,12 +38,16 @@
 
   <div class="my-5">
     <%= form.label :category_id %>
-    <%= form.text_field :category_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:category_id].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:category_id].any?}] %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:category_id].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:category_id].any?}] %>
   </div>
 
   <div class="my-5 flex items-center gap-2">
     <%= form.label :active %>
     <%= form.check_box :active, class: ["block shadow-sm rounded-md border order-first h-5 w-5", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:active].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:active].any?}] %>
+  </div>
+
+  <div class="my-5 flex items-center gap-2">
+   <%= link_to "Product Stock", admin_product_stocks_path(admin_product), class: "underline" %>
   </div>
 
   <div class="inline">

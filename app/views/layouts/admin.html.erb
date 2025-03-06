@@ -47,10 +47,16 @@
                     </li>
 
                     <li>
-                        <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do%>
+                        <%= link_to admin_orders_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do%>
                         <%= icon('fa-solid', 'truck-fast', class: "mr-2")%> <span class="hidden md:inline-block">Orders</span>
                         <% end %>
                     </li>
+
+                  <li>
+                    <%= link_to destroy_admin_session_path, data: {"turbo-method": :delete, "turbo-confirm": "Are you sure you want to sign out?"}, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do%>
+                      <%= icon('fa-solid', 'sign-out', class: "mr-2")%> <span class="hidden md:inline-block">Sign out</span>
+                    <% end %>
+                  </li>
                 </ul>
             </div>
         </nav>
