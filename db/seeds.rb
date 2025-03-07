@@ -51,7 +51,7 @@ categories.each do |category_data|
     name: category_data[:name],
     description: category_data[:description]
   )
-  
+
   # Store in hash for later use
   created_categories[category_data[:name]] = category
 
@@ -112,12 +112,12 @@ products_data = {
 # Create products for each category
 products_data.each do |category_name, products|
   category = created_categories[category_name]
-  
+
   if category.nil?
     puts "Warning: Category '#{category_name}' not found"
     next
   end
-  
+
   products.each do |product_data|
     product = Product.create!(
       name: product_data[:name],
@@ -126,7 +126,7 @@ products_data.each do |category_name, products|
       active: product_data[:active],
       category: category
     )
-    
+
     # Path to the product image
     possible_paths = [
       Rails.root.join('public', 'Product', category_name, product_data[:image_filename]),
@@ -134,10 +134,10 @@ products_data.each do |category_name, products|
       Rails.root.join('app', 'assets', 'images', 'Product', category_name, product_data[:image_filename]),
       Rails.root.join('storage', 'Product', category_name, product_data[:image_filename])
     ]
-    
+
     # Find the first path that exists
     image_path = possible_paths.find { |path| File.exist?(path) }
-    
+
     # Attach the image if file exists
     if image_path
       product.images.attach(
@@ -151,7 +151,7 @@ products_data.each do |category_name, products|
       puts "Searched in the following locations:"
       possible_paths.each { |path| puts "  - #{path}" }
     end
-    
+
     # Create stock entries for sizes 37-40 with 50 items each
     (37..40).each do |size|
       Stock.create!(
