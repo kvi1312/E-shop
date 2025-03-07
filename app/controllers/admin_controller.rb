@@ -4,11 +4,18 @@ class AdminController < ApplicationController
     before_action :authenticate_admin!
     def index
         @orders = Order.where(fulfilled: false).order(created_at: :desc).take(5)
+
+        today_orders = Order.where(created_at: Time.now.midnight..Time.now)
+        total_revenue = today_orders.sum(:total)
+        order_count = today_orders.count
+
         @quick_stats = {
-          sales: Order.where(created_at: Time.now.midnight..Time.now).count,
-          revenue: Order.where(created_at: Time.now.midnight..Time.now).sum(:total).round(2),
-          avg_sale: Order.where(created_at: Time.now.midnight..Time.now).average(:total).round(2),
-          per_sale: OrderProduct.joins(:order).where(orders: { created_at: Time.now.midnight..Time.now }).average(:quantity),
+          sales: order_count,
+          revenue: total_revenue.round(),
+          avg_sale: order_count > 0 ? (total_revenue / order_count).round() : 0,
+          per_sale: OrderProduct.joins(:order)
+                                .where(orders: { created_at: Time.now.midnight..Time.now })
+                                .average(:quantity) || 0,
         }
 
         @orders_by_day = Order.where('created_at > ?', Time.now - 7.days).order(:created_at)
