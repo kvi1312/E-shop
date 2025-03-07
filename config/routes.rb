@@ -32,5 +32,8 @@ Rails.application.routes.draw do
    #         end
    #  end
 
+  resources :categories, only: [:show]
+  resources :products, only: [:show]
    get "admin" => "admin#index" # config route with <controller>#page
+    get "category" => "category#index"
 end

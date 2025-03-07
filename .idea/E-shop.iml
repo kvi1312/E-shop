@@ -28,17 +28,17 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionpack (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actiontext (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionview (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activejob (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activemodel (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actioncable (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionpack (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actiontext (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionview (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activejob (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activemodel (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activerecord (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activestorage (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activesupport (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.7, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, ruby-3.3.7-p123) [gem]" level="application" />
@@ -99,10 +99,10 @@
     <orderEntry type="library" scope="PROVIDED" name="rack-session (v2.1.0, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.2.0, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rackup (v2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.2.0, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.6.2, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="railties (v7.2.2.1, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="railties (v8.0.1, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.12.0, ruby-3.3.7-p123) [gem]" level="application" />
@@ -135,6 +135,7 @@
     <orderEntry type="library" scope="PROVIDED" name="tzinfo-data (v1.2025.1, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v3.1.4, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-emoji (v4.0.4, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uri (v1.0.3, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="useragent (v0.16.11, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.1, ruby-3.3.7-p123) [gem]" level="application" />
@@ -155,6 +156,7 @@
         <option value="active_record:devise" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
+        <option value="authentication" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
@@ -162,6 +164,7 @@
         <option value="devise:controllers" />
         <option value="devise:install" />
         <option value="devise:views" />
+        <option value="erb:authentication" />
         <option value="erb:controller" />
         <option value="erb:mailer" />
         <option value="erb:scaffold" />
@@ -180,9 +183,11 @@
         <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="script" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
+        <option value="test_unit:authentication" />
         <option value="test_unit:channel" />
         <option value="test_unit:generator" />
         <option value="test_unit:install" />
@@ -196,6 +201,7 @@
         <option value="active_record:devise" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
+        <option value="authentication" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
@@ -203,6 +209,7 @@
         <option value="devise:controllers" />
         <option value="devise:install" />
         <option value="devise:views" />
+        <option value="erb:authentication" />
         <option value="erb:controller" />
         <option value="erb:mailer" />
         <option value="erb:scaffold" />
@@ -221,9 +228,11 @@
         <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="script" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
+        <option value="test_unit:authentication" />
         <option value="test_unit:channel" />
         <option value="test_unit:generator" />
         <option value="test_unit:install" />
