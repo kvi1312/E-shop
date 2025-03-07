@@ -13,11 +13,11 @@
 
   <div class="my-5">
     <%= form.label :name %>
-    <%= form.text_field :name, 
-        class: [
-          "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", 
-          @category.errors[:name].any? ? "border-red-400 focus:outline-red-600" : "border-gray-400 focus:outline-blue-600"
-        ] 
+    <%= form.text_field :name,
+                        class: [
+                          "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                          @category.errors[:name].any? ? "border-red-400 focus:outline-red-600" : "border-gray-400 focus:outline-blue-600"
+                        ]
     %>
     <% if @category.errors[:name].any? %>
       <p class="text-red-500 text-sm mt-1"><%= @category.errors[:name].first %></p>
@@ -26,24 +26,24 @@
 
   <div class="my-5">
     <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, 
-        class: [
-          "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", 
-          @category.errors[:description].any? ? "border-red-400 focus:outline-red-600" : "border-gray-400 focus:outline-blue-600"
-        ] 
+    <%= form.text_area :description, rows: 4,
+                       class: [
+                         "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                         @category.errors[:description].any? ? "border-red-400 focus:outline-red-600" : "border-gray-400 focus:outline-blue-600"
+                       ]
     %>
     <% if @category.errors[:description].any? %>
       <p class="text-red-500 text-sm mt-1"><%= @category.errors[:description].first %></p>
     <% end %>
   </div>
 
-<div class="my-5">
+  <div class="my-5">
     <%= form.label :image %>
-    <%= form.file_field :image, rows: 4, 
-        class: [
-          "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", 
-          @category.errors[:description].any? ? "border-red-400 focus:outline-red-600" : "border-gray-400 focus:outline-blue-600"
-        ] 
+    <%= form.file_field :image, rows: 4,
+                        class: [
+                          "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                          @category.errors[:description].any? ? "border-red-400 focus:outline-red-600" : "border-gray-400 focus:outline-blue-600"
+                        ]
     %>
     <% if @category.errors[:description].any? %>
       <p class="text-red-500 text-sm mt-1"><%= @category.errors[:description].first %></p>

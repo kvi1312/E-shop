@@ -3,7 +3,7 @@ class Admin::CategoriesController < AdminController
 
   # GET /admin/categories or /admin/categories.json
   def index
-    @categories  = Category.all
+    @categories = Category.all
   end
 
   # GET /admin/categories/1 or /admin/categories/1.json
@@ -12,7 +12,7 @@ class Admin::CategoriesController < AdminController
 
   # GET /admin/categories/new
   def new
-    @category  = Category.new
+    @category = Category.new
   end
 
   # GET /admin/categories/1/edit
@@ -21,7 +21,7 @@ class Admin::CategoriesController < AdminController
 
   # POST /admin/categories or /admin/categories.json
   def create
-    @category  = Category.new(categories_params)
+    @category = Category.new(categories_params)
 
     respond_to do |format|
       if @category.save
@@ -38,8 +38,8 @@ class Admin::CategoriesController < AdminController
   def update
     respond_to do |format|
       if @category.update(categories_params)
-        format.html { redirect_to  admin_category_path(@category), notice: "Category was successfully updated." }
-        format.json { render :show, status: :ok, location:  admin_category_path(@category) }
+        format.html { redirect_to admin_category_path(@category), notice: "Category was successfully updated." }
+        format.json { render :show, status: :ok, location: admin_category_path(@category) }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @category.errors, status: :unprocessable_entity }
@@ -58,13 +58,14 @@ class Admin::CategoriesController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_categories
-      @category = Category.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def categories_params
-      params.require(:category).permit(:name, :description, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_categories
+    @category = Category.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def categories_params
+    params.require(:category).permit(:name, :description, :image)
+  end
 end
