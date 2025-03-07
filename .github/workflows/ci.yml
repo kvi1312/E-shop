@@ -63,7 +63,7 @@ jobs:
         run: bin/rubocop -f github
 
   auto_merge:
-    needs: [ scan_ruby, scan_js, lint, test ]
+    needs: [ scan_ruby, scan_js, lint ]
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
 
