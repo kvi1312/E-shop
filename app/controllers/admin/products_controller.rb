@@ -37,7 +37,7 @@ class Admin::ProductsController < AdminController
   # PATCH/PUT /admin/products/1 or /admin/products/1.json
   def update
     @admin_product = Product.find(params[:id])
-    if @admin_product.update(admin_product_params.reject{|k| k["image"]})
+    if @admin_product.update(admin_product_params.reject { |k| k["image"] })
       if admin_product_params["image"]
         admin_product_params["images"].each do |image|
           @admin_product.images.attach(image)
@@ -60,13 +60,14 @@ class Admin::ProductsController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_product
-      @admin_product = Product.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def admin_product_params
-      params.require(:product).permit(:name, :description, :price, :category_id, :active, images: [])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_product
+    @admin_product = Product.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def admin_product_params
+    params.require(:product).permit(:name, :description, :price, :category_id, :active, images: [])
+  end
 end

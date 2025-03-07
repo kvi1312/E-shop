@@ -73,13 +73,14 @@ class Admin::StocksController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_stock
-      @admin_stock = Stock.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def admin_stock_params
-      params.require(:stock).permit(:size, :amount)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_stock
+    @admin_stock = Stock.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def admin_stock_params
+    params.require(:stock).permit(:size, :amount)
+  end
 end

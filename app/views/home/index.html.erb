@@ -1,16 +1,16 @@
-<div class ="bg-gray-800 text-white text-center py-20">
+<div class="bg-gray-800 text-white text-center py-20">
   <h1 class="text-5xl font-bold mb-4">Welcome to E-shop</h1>
   <p class="text-xl mb-8">We have everything you need!</p>
   <%= link_to "Shop Now", root_path, class: "bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded" %>
 </div>
 
 <div class="flex flex-wrap justify-center mt-8 items-center gap-10">
-  <% @main_categories.each do |category|%>
+  <% @main_categories.each do |category| %>
     <%= link_to category_path(category) do %>
       <div class="flex flex-col mb-4">
         <h2 class="text-gray-800 font-medium text-lg text-center mb-6">
           <%= category.name %></h2>
-          <%= category.image.present? ? image_tag(category.image, class: "max-w-lg") : image_tag("https://placehold.co/512") %>
+        <%= category.image.present? ? image_tag(category.image, class: "max-w-lg") : image_tag("https://placehold.co/512") %>
       </div>
     <% end %>
   <% end %>
@@ -61,7 +61,7 @@
   <p class="mb-8">
     Subscribe to our newsletter for the latest updates and offers.
   </p>
-  <%=form_with url:root_path, method: :post, local:true, class: "flex justify-center" do%>
+  <%= form_with url: root_path, method: :post, local: true, class: "flex justify-center" do %>
     <%= email_field_tag :email, nil, placeholder: "Enter your email", class: "bg-white p-2 rounded-l text-gray-800 focus:outline-none focus:ring-0" %>
     <%= submit_tag "Subscribe", class: "bg-gray-700 hover:bg-gray-800 cursor-pointer text-white font-bold py-2 px-4 rounded-r" %>
   <% end %>

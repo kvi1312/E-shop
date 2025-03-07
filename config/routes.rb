@@ -17,23 +17,23 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-   # Defines the root path route ("/")
-   # root "posts#index"
+  # Defines the root path route ("/")
+  # root "posts#index"
 
-   root to: "home#index"
+  root to: "home#index"
 
-   authenticated :admin do
-      root to: "admin#index", as: :admin_root
-      end
+  authenticated :admin do
+    root to: "admin#index", as: :admin_root
+  end
 
-   #  unauthenticated do
-   #   as :user do
-   #           root to: "devise/registrations#new"
-   #         end
-   #  end
+  #  unauthenticated do
+  #   as :user do
+  #           root to: "devise/registrations#new"
+  #         end
+  #  end
 
-  resources :categories, only: [:show]
-  resources :products, only: [:show]
-   get "admin" => "admin#index" # config route with <controller>#page
-    get "category" => "category#index"
+  resources :categories, only: [ :show ]
+  resources :products, only: [ :show ]
+  get "admin" => "admin#index" # config route with <controller>#page
+  get "category" => "category#index"
 end

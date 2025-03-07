@@ -13,41 +13,41 @@
 
   <div class="my-5">
     <%= form.label :name %>
-    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:name].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:name].any?}] %>
+    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", { "border-gray-400 focus:outline-blue-600": admin_product.errors[:name].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:name].any? }] %>
   </div>
 
   <div class="my-5">
     <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:description].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:description].any?}] %>
+    <%= form.text_area :description, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", { "border-gray-400 focus:outline-blue-600": admin_product.errors[:description].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:description].any? }] %>
   </div>
 
   <div class="my-5">
-    <% if admin_product.images.any?%>
-      <% admin_product.images.each do |image|%>
-        <%= image_tag image, class: "w-20 h-20 objec-cover rounded-md"%>
-        <% end %>
+    <% if admin_product.images.any? %>
+      <% admin_product.images.each do |image| %>
+        <%= image_tag image, class: "w-20 h-20 objec-cover rounded-md" %>
+      <% end %>
     <% end %>
     <%= form.label :images %>
-    <%= form.file_field :images, multiple: true, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:description].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:description].any?}] %>
+    <%= form.file_field :images, multiple: true, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", { "border-gray-400 focus:outline-blue-600": admin_product.errors[:description].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:description].any? }] %>
   </div>
 
   <div class="my-5">
     <%= form.label :price %>
-    <%= form.number_field :price, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:price].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:price].any?}] %>
+    <%= form.number_field :price, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", { "border-gray-400 focus:outline-blue-600": admin_product.errors[:price].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:price].any? }] %>
   </div>
 
   <div class="my-5">
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.order(:name), :id, :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:category_id].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:category_id].any?}] %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", { "border-gray-400 focus:outline-blue-600": admin_product.errors[:category_id].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:category_id].any? }] %>
   </div>
 
   <div class="my-5 flex items-center gap-2">
     <%= form.label :active %>
-    <%= form.check_box :active, class: ["block shadow-sm rounded-md border order-first h-5 w-5", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:active].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:active].any?}] %>
+    <%= form.check_box :active, class: ["block shadow-sm rounded-md border order-first h-5 w-5", { "border-gray-400 focus:outline-blue-600": admin_product.errors[:active].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:active].any? }] %>
   </div>
 
   <div class="my-5 flex items-center gap-2">
-   <%= link_to "Product Stock", admin_product_stocks_path(admin_product), class: "underline" %>
+    <%= link_to "Product Stock", admin_product_stocks_path(admin_product), class: "underline" %>
   </div>
 
   <div class="inline">
