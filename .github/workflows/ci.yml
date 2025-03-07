@@ -63,22 +63,17 @@ jobs:
         run: bin/rubocop -f github
 
   auto_merge:
-    needs: [scan_ruby, scan_js, lint]
+    needs: [ scan_ruby, scan_js, lint, test ]
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
+    if: github.event_name == 'pull_request'
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - name: Auto-merge pull request
         run: |
-          PR_NUMBER=$(echo $GITHUB_REF | sed 's/refs\/pull\///' | sed 's/\/merge//')
-          gh pr merge $PR_NUMBER --auto --merge
+          gh auth login --with-token <<< "${{ secrets.PAT_GITHUB }}"
+          gh pr merge ${{ github.event.pull_request.number }} --auto --merge
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_GITHUB }}
 #  test:
 #    runs-on: ubuntu-latest
 #
