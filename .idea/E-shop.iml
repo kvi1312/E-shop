@@ -126,6 +126,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v2.6.0, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.4, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.5, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="stripe (v13.5.0, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tailwindcss-rails (v4.2.0, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tailwindcss-ruby (v4.0.9, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, ruby-3.3.7-p123) [gem]" level="application" />

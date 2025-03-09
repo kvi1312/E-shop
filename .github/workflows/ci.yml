@@ -61,23 +61,6 @@ jobs:
 
       - name: Lint code for consistent style
         run: bin/rubocop -f github
-
-  auto_merge:
-  needs: [scan_ruby, scan_js, lint]
-  runs-on: ubuntu-latest
-  if: github.event_name == 'pull_request'
-
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
-    - name: Auto-merge pull request
-      run: |
-        gh pr merge ${{ github.event.pull_request.number }} --auto --merge
-      env:
-        GH_TOKEN: ${{ secrets.PAT_GITHUB }}
 #  test:
 #    runs-on: ubuntu-latest
 #
