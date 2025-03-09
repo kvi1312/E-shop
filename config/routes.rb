@@ -28,12 +28,15 @@ Rails.application.routes.draw do
 
   #  unauthenticated do
   #   as :user do
-  #           root to: "devise/registrations#new"
+  #           root to: "devise/registrations#new"2
   #         end
   #  end
 
   resources :categories, only: [ :show ]
   resources :products, only: [ :show ]
+
   get "admin" => "admin#index" # config route with <controller>#page
   get "category" => "category#index"
+  get "cart" => "cart#show"
+  post "checkout" => "checkouts#create"
 end
