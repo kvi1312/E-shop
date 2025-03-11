@@ -39,4 +39,6 @@ Rails.application.routes.draw do
   get "category" => "category#index"
   get "cart" => "cart#show"
   post "checkout" => "checkouts#create"
+  get "success" => "checkouts#success"
+  get "cancel" => "checkouts#cancel"
 end
