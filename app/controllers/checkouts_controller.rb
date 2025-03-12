@@ -2,8 +2,6 @@ class CheckoutsController < ApplicationController
   def create
     puts "hit create"
     stripe_secret_key = Rails.application.credentials.dig(:stripe, :stripe_secret_key)
-    puts stripe_secret_key
-    # stripe_publish_key = Rails.application.credentials.dig(:stripe_publish_key)
     Stripe.api_key = stripe_secret_key
     cart = params[:cart]
     line_items = cart.map do |item|
