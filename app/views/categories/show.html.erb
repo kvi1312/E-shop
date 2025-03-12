@@ -2,6 +2,15 @@
 <div class="min-h-screen flex justify-center">
   <div class="flex flex-wrap flex-col mt-6">
     <h2 class="text-lg text-gray-800">Filter</h2>
+    <%= form_with url: category_path(@category), method: :get, class: "flex flex-col" do |form| %>
+      <%= form.number_field :min, placeholder: "Min price", class: "rounded-md border-gray-300 focus:ring-0 focus:ring-blue-300 focus:border-blue-400 text-gray-800 px-3 py-2 outline-none border p-2 w-32" %>
+      <%= form.number_field :max, placeholder: "Max price", class: "rounded-md border-gray-300 focus:ring-0 focus:ring-blue-300 focus:border-blue-400 text-gray-800 px-3 py-2 outline-none border p-2 mt-2 w-32" %>
+      <%= form.submit "Filter", class: "bg-blue-500 text-white border mt-4 rounded-md p-2 cursor-pointer hover:bg-blue-600 w-32" %>
+  <% end %>
+
+    <%= form_with url: category_path(@category), method: :get, class: "flex flex-col" do |form| %>
+      <%= form.submit "Clear", class: "cursor-pointer bg-red-400 hover:bg-red-500 text-white py-2 mt-2 px-4 rounded-md w-24 text-center w-32" %>
+    <% end %>
   </div>
   <div class="flex flex-wrap mt-6 gap-10 flex-grow justify-center items-start">
     <% if @products.empty? %>

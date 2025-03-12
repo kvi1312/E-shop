@@ -55,6 +55,7 @@
 
             </tbody>
           </table>
+          <%== pagy_nav(@not_fulfilled_pagy, pagy_param: :page_not_fulfilled) if @not_fulfilled_pagy.pages > 1 %>
         </div>
       </div>
     </div>
@@ -106,6 +107,7 @@
 
             </tbody>
           </table>
+          <%== pagy_nav(@fulfilled_pagy, pagy_param: :page_fulfilled) if @fulfilled_pagy.pages > 1 %>
         </div>
       </div>
     </div>
