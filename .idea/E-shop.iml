@@ -90,7 +90,6 @@
     <orderEntry type="library" scope="PROVIDED" name="pagy (v9.3.4, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parallel (v1.26.3, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parser (v3.3.7.1, ruby-3.3.7-p123) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pg (v1.5.9, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pp (v0.6.2, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="prettyprint (v0.2.0, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.3, ruby-3.3.7-p123) [gem]" level="application" />
@@ -125,6 +124,7 @@
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.29.1, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.5.2, ruby-3.3.7-p123) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v2.6.0, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.4, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.5, ruby-3.3.7-p123) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stripe (v13.5.0, ruby-3.3.7-p123) [gem]" level="application" />

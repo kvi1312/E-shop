@@ -61,34 +61,24 @@ jobs:
 
       - name: Lint code for consistent style
         run: bin/rubocop -f github
-#  test:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: Install packages
-#        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y google-chrome-stable curl libjemalloc2 libsqlite3-0 libvips
-#
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#
-#      - name: Set up Ruby
-#        uses: ruby/setup-ruby@v1
-#        with:
-#          ruby-version: .ruby-version
-#          bundler-cache: true
-#
-#      - name: Grant execute permissions for bin scripts
-#        run: chmod +x bin/*
-#
-#      - name: Run tests
-#        env:
-#          RAILS_ENV: test
-#        run: bin/rails db:test:prepare test test:system
-#
-#      - name: Keep screenshots from failed system tests
-#        uses: actions/upload-artifact@v4
-#        if: failure()
-#        with:
-#          name: screenshots
-#          path: ${{ github.workspace }}/tmp/screenshots
-#          if-no-files-found: ignore
+
+  auto_merge:
+    needs: [scan_ruby, scan_js, lint]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Auto-merge if eligible
+        uses: pascalgn/automerge-action@v0.15.6
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "automerge,!work in progress,!do not merge"
+          MERGE_METHOD: "squash"
+          MERGE_COMMIT_MESSAGE: "pull-request-title"
+          MERGE_FORKS: "false"
+          MERGE_RETRIES: "6"
+          MERGE_RETRY_SLEEP: "10000"
+          MERGE_REQUIRED_APPROVALS: "0"

@@ -22,7 +22,7 @@ class WebhooksController < ApplicationController
     end
 
     case event.type
-    when 'checkout.session.completed'
+    when "checkout.session.completed"
       session = event.data.object
       shipping_details = session["shipping_details"]
       puts "Session: #{session}"
@@ -34,7 +34,7 @@ class WebhooksController < ApplicationController
       order = Order.create!(customer_email: session["customer_details"]["email"], total: session["amount_total"], address: address, fulfilled: false)
       full_session = Stripe::Checkout::Session.retrieve({
                                                           id: session.id,
-                                                          expand: ['line_items']
+                                                          expand: [ "line_items" ]
                                                         })
       line_items = full_session.line_items
       line_items["data"].each do |item|
@@ -47,6 +47,6 @@ class WebhooksController < ApplicationController
       puts "Unhandled event type: #{event.type}"
     end
 
-    render json: { message: 'success' }
+    render json: { message: "success" }
   end
 end
