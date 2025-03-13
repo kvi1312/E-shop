@@ -13,7 +13,7 @@ class Product < ApplicationRecord
     json = super(options)
 
     if images.attached?
-      json['image_urls'] = images.map do |image|
+      json["image_urls"] = images.map do |image|
         url_options = Rails.application.config.action_mailer.default_url_options
 
         {
@@ -23,7 +23,7 @@ class Product < ApplicationRecord
         }
       end
     else
-      json['image_urls'] = []
+      json["image_urls"] = []
     end
 
     json
