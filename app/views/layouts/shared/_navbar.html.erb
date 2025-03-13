@@ -19,9 +19,10 @@
         </div>
 
         <div class="hidden sm:flex sml:ml-6 items-center justify-center">
-          <div class="flex space-x-10">
-            <%= link_to cart_path, class: "text-gray-500 hover:underline py-2 rounded-md text-md font-medium" do %>
+          <div class="flex space-x-10" data-controller="nav">
+            <%= link_to cart_path, class: "relative text-gray-500 hover:underline py-2 rounded-md text-md font-medium" do %>
               <%= icon 'fa-solid', 'shopping-cart' %>
+              <span data-nav-target="count" class="absolute -top-2 -right-3 bg-gray-500 text-white text-xs font-bold rounded-full px-2 py-0 hidden">0</span>
             <% end %>
           </div>
         </div>

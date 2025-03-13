@@ -1,9 +1,31 @@
-<div class="min-h-screen">
-  <h1>Cart page</h1>
-  <div id="errorContainer"></div>
-  <div data-controller="cart">
-    <div class="mt-4 font-medium" id="total"></div>
-    <button class="mt-6 py-2 px-4 bg-gray-500 hover:bg-gray-600 rounded text-white" data-action="click->cart#checkout">Checkout</button>
-    <button class="py-2 px-4 bg-gray-500 hover:bg-gray-600 rounded text-white" data-action="click->cart#clear">Clear Cart</button>
+<div class="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <div data-controller="cart" class="bg-white shadow overflow-hidden rounded-md">
+      <div id="cart-items" class="divide-y divide-gray-200">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+
+      <div class="p-6 bg-gray-50 border-t border-gray-200">
+        <div class="flex justify-between items-center">
+          <div class="text-xl font-semibold text-gray-900" id="total"></div>
+          <div class="flex space-x-4">
+            <button data-action="click->cart#clear"
+                    class="py-2 px-4 rounded-md transition font-medium"
+                    style="background-color: #FFB6C1; color: #7A1C1C;"
+                    onmouseover="this.style.backgroundColor='#FF9999'"
+                    onmouseout="this.style.backgroundColor='#FFB6C1'">
+              Clear Cart
+            </button>
+            <button data-action="click->cart#checkout"
+                    class="ml-auto py-2 px-6 rounded-md transition font-medium"
+                    style="background-color: #77DD77; color: #215E21;"
+                    onmouseover="this.style.backgroundColor='#66CC66'"
+                    onmouseout="this.style.backgroundColor='#77DD77'">
+              Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

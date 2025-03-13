@@ -1,1 +1,60 @@
-<h1>Success</h1>
+<div class="max-w-3xl mx-auto bg-white shadow-2xl rounded-lg p-8 mt-12 border border-gray-200" data-controller="checkout" data-checkout-is-success-value="true">
+  <div class="bg-green-50 border border-green-500 text-green-600 rounded-md p-3 mb-6 text-center font-semibold">
+    ✅ Payment Successful! Thank you for your purchase.
+  </div>
+
+  <div class="flex justify-between items-center border-b border-gray-300 pb-4 mb-6">
+    <h1 class="text-2xl font-bold text-gray-800">🛒 Order Receipt</h1>
+  </div>
+
+  <div class="bg-gray-50 p-4 rounded-md mb-6 gap-x-4">
+    <h2 class="text-lg font-semibold text-gray-900 mb-4">Customer Information</h2>
+    <p class="text-gray-700 mb-2">
+      <span class="font-medium text-gray-600 tracking-wide">Bill ID:</span> <%= params[:session_id] %>
+    </p>
+    <p class="text-gray-700 mb-2">
+      <span class="font-medium text-gray-600 tracking-wide">Name:</span> <%= @order[:customer][:name] %>
+    </p>
+    <p class="text-gray-700 mb-2">
+      <span class="font-medium text-gray-600 tracking-wide">Email:</span> <%= @order[:customer][:email] %>
+    </p>
+    <p class="text-gray-700">
+      <span class="font-medium text-gray-600 tracking-wide">Address:</span>
+      <%= @order[:customer][:address][:line1] %>,
+      <%= @order[:customer][:address][:city] %>,
+      <%= @order[:customer][:address][:country] %>
+    </p>
+  </div>
+
+
+  <div class="mb-6">
+    <h2 class="text-lg font-semibold text-gray-900 mb-4">Order Summary</h2>
+    <ul class="divide-y divide-gray-200">
+      <% @order[:items].each do |item| %>
+        <li class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-4">
+            <img src="<%= item[:image_url] %>" alt="<%= item[:name] %>" class="w-16 h-16 object-cover rounded-md shadow-sm">
+            <div>
+              <p class="text-gray-900 font-medium"><%= item[:name] %></p>
+              <p class="text-gray-500 text-sm">Quantity: <%= item[:quantity] %></p>
+            </div>
+          </div>
+          <span class="text-gray-900 font-semibold">$<%= item[:price] %></span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="bg-gray-100 p-4 rounded-md">
+    <div class="flex justify-between font-semibold text-gray-900 text-lg">
+      <span>Total:</span>
+      <span>$<%= @order.dig(:total_amount) %> <%= @order[:currency] %></span>
+    </div>
+  </div>
+
+  <div class="text-center mt-6">
+    <a href="/" class="inline-block bg-indigo-600 text-white py-3 px-6 rounded-md text-lg font-medium hover:bg-indigo-700 transition">
+      Continue Shopping
+    </a>
+  </div>
+</div>
