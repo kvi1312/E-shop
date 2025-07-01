@@ -111,7 +111,7 @@ GEM
     erubi (1.13.1)
     ffi (1.17.1-x64-mingw-ucrt)
     ffi (1.17.1-x86_64-linux-gnu)
-    font-awesome-sass (6.5.2)
+    font-awesome-sass (6.7.2)
       sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -329,7 +329,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
-  font-awesome-sass (~> 6.5.1)
+  font-awesome-sass (~> 6.7.2)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
