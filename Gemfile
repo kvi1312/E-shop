@@ -63,4 +63,4 @@ gem "devise", "~> 4.9"
 
 gem "stripe", "~> 15.1"
 
-gem "pagy", "~> 9.3"
+gem "pagy", "~> 9.4"
